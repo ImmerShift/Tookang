@@ -2,6 +2,7 @@
 
 import { getServerUserId } from "../../../lib/auth/session";
 import { calculatePlatformFeeAmount } from "../../../lib/escrow/amounts";
+import { getNextTransactionStatus } from "../../../lib/escrow/state";
 import { createSupabaseAdminClient } from "../../../lib/supabase/admin";
 import { createSupabaseServerClient } from "../../../lib/supabase/server";
 
@@ -11,6 +12,11 @@ type BidActionState = {
 };
 
 type AcceptBidState = {
+  ok: boolean;
+  message: string;
+};
+
+type EscrowActionState = {
   ok: boolean;
   message: string;
 };
@@ -204,6 +210,65 @@ export const acceptBidAction = async (
     return {
       ok: false,
       message: error instanceof Error ? error.message : "Unable to accept bid.",
+    };
+  }
+};
+
+export const transitionEscrowAction = async (
+  _prevState: EscrowActionState,
+  formData: FormData
+): Promise<EscrowActionState> => {
+  const serverUserId = await getServerUserId();
+  const transactionId = parseText(formData.get("transaction_id"));
+  const event = parseText(formData.get("event"));
+
+  if (!transactionId || !event) {
+    return { ok: false, message: "Missing transaction action." };
+  }
+
+  try {
+    const supabase = serverUserId ? createSupabaseServerClient() : createSupabaseAdminClient();
+    const { data: transaction, error: transactionError } = await supabase
+      .from("transactions")
+      .select("*")
+      .eq("id", transactionId)
+      .maybeSingle();
+
+    if (transactionError) {
+      return { ok: false, message: transactionError.message };
+    }
+
+    if (!transaction) {
+      return { ok: false, message: "Transaction not found." };
+    }
+
+    const nextStatus = getNextTransactionStatus(transaction.status, event as never);
+    if (!nextStatus) {
+      return { ok: false, message: "Invalid escrow transition." };
+    }
+
+    const { error: updateError } = await supabase
+      .from("transactions")
+      .update({ status: nextStatus })
+      .eq("id", transaction.id);
+
+    if (updateError) {
+      return { ok: false, message: updateError.message };
+    }
+
+    if (event === "confirm_completion" || event === "resolve_dispute") {
+      await supabase.from("jobs").update({ status: "completed" }).eq("id", transaction.job_id);
+    }
+
+    if (event === "open_dispute") {
+      await supabase.from("jobs").update({ status: "disputed" }).eq("id", transaction.job_id);
+    }
+
+    return { ok: true, message: "Escrow updated." };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "Unable to update escrow.",
     };
   }
 };

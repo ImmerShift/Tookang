@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 
-import { acceptBidAction } from "./actions";
+import { acceptBidAction, transitionEscrowAction } from "./actions";
 import BidForm from "./BidForm";
 import { getBidsForJob } from "../../../lib/db/bids";
 import { getJobById } from "../../../lib/db/jobs";
+import { getTransactionsForJob } from "../../../lib/db/transactions";
 
 type JobPageProps = {
   params: { jobId: string };
@@ -16,6 +17,7 @@ export default async function JobDetailPage({ params }: JobPageProps) {
   }
 
   const { data: bids } = await getBidsForJob(job.id);
+  const { data: transactions } = await getTransactionsForJob(job.id);
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-[#191C1D]">
@@ -89,15 +91,113 @@ export default async function JobDetailPage({ params }: JobPageProps) {
             </div>
           </div>
 
-          <div className="rounded-[32px] bg-white px-6 py-6 shadow-[0_24px_60px_rgba(25,28,29,0.08)]">
-            <h2 className="font-[var(--font-display)] text-xl font-semibold text-[#000666]">
-              Submit a Bid
-            </h2>
-            <p className="mt-2 text-sm text-[#454652]">
-              Demo mode: provide a valid Tukang or Agency ID that matches the bid type.
-            </p>
-            <div className="mt-4">
-              <BidForm jobId={job.id} />
+          <div className="flex flex-col gap-6">
+            <div className="rounded-[32px] bg-white px-6 py-6 shadow-[0_24px_60px_rgba(25,28,29,0.08)]">
+              <h2 className="font-[var(--font-display)] text-xl font-semibold text-[#000666]">
+                Escrow Timeline
+              </h2>
+              <div className="mt-4 grid gap-4">
+                {(transactions ?? []).length === 0 && (
+                  <div className="rounded-[24px] bg-[#F3F4F5] px-5 py-4 text-sm text-[#454652]">
+                    No escrow transaction yet. Accept a bid to start escrow.
+                  </div>
+                )}
+                {(transactions ?? []).map((transaction) => (
+                  <div
+                    key={transaction.id}
+                    className="rounded-[24px] bg-[#F3F4F5] px-5 py-4 text-sm text-[#454652]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-[#000666]">
+                        {transaction.status.replaceAll("_", " ")}
+                      </span>
+                      <span className="text-xs">Rp {transaction.total_amount}</span>
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {transaction.status === "inspection_escrowed" && (
+                        <>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="fund_full" />
+                            <button className="rounded-full bg-[#000666] px-4 py-2 text-xs font-semibold text-white">
+                              Fund Full Escrow
+                            </button>
+                          </form>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="open_dispute" />
+                            <button className="rounded-full bg-[#FFDCC3] px-4 py-2 text-xs font-semibold text-[#000666]">
+                              Open Dispute
+                            </button>
+                          </form>
+                        </>
+                      )}
+                      {transaction.status === "full_escrow_funded" && (
+                        <>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="submit_finish" />
+                            <button className="rounded-full bg-[#000666] px-4 py-2 text-xs font-semibold text-white">
+                              Submit Finish
+                            </button>
+                          </form>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="open_dispute" />
+                            <button className="rounded-full bg-[#FFDCC3] px-4 py-2 text-xs font-semibold text-[#000666]">
+                              Open Dispute
+                            </button>
+                          </form>
+                        </>
+                      )}
+                      {transaction.status === "pending_confirmation" && (
+                        <>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="confirm_completion" />
+                            <button className="rounded-full bg-[#AC332A] px-4 py-2 text-xs font-semibold text-white">
+                              Confirm Completion
+                            </button>
+                          </form>
+                          <form action={transitionEscrowAction}>
+                            <input type="hidden" name="transaction_id" value={transaction.id} />
+                            <input type="hidden" name="event" value="open_dispute" />
+                            <button className="rounded-full bg-[#FFDCC3] px-4 py-2 text-xs font-semibold text-[#000666]">
+                              Open Dispute
+                            </button>
+                          </form>
+                        </>
+                      )}
+                      {transaction.status === "disputed" && (
+                        <form action={transitionEscrowAction}>
+                          <input type="hidden" name="transaction_id" value={transaction.id} />
+                          <input type="hidden" name="event" value="resolve_dispute" />
+                          <button className="rounded-full bg-[#000666] px-4 py-2 text-xs font-semibold text-white">
+                            Resolve Dispute
+                          </button>
+                        </form>
+                      )}
+                      {transaction.status === "completed" && (
+                        <span className="rounded-full bg-[#DFF4E7] px-3 py-1 text-[10px] font-semibold text-[#1A7F37]">
+                          Completed
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[32px] bg-white px-6 py-6 shadow-[0_24px_60px_rgba(25,28,29,0.08)]">
+              <h2 className="font-[var(--font-display)] text-xl font-semibold text-[#000666]">
+                Submit a Bid
+              </h2>
+              <p className="mt-2 text-sm text-[#454652]">
+                Demo mode: provide a valid Tukang or Agency ID that matches the bid type.
+              </p>
+              <div className="mt-4">
+                <BidForm jobId={job.id} />
+              </div>
             </div>
           </div>
         </div>
