@@ -1,10 +1,16 @@
 "use server";
 
 import { getServerUserId } from "../../../lib/auth/session";
+import { calculatePlatformFeeAmount } from "../../../lib/escrow/amounts";
 import { createSupabaseAdminClient } from "../../../lib/supabase/admin";
 import { createSupabaseServerClient } from "../../../lib/supabase/server";
 
 type BidActionState = {
+  ok: boolean;
+  message: string;
+};
+
+type AcceptBidState = {
   ok: boolean;
   message: string;
 };
@@ -84,6 +90,120 @@ export const createBidAction = async (
     return {
       ok: false,
       message: error instanceof Error ? error.message : "Unable to submit bid.",
+    };
+  }
+};
+
+export const acceptBidAction = async (
+  _prevState: AcceptBidState,
+  formData: FormData
+): Promise<AcceptBidState> => {
+  const serverUserId = await getServerUserId();
+  const bidId = parseText(formData.get("bid_id"));
+
+  if (!bidId) {
+    return { ok: false, message: "Missing bid id." };
+  }
+
+  try {
+    const supabase = serverUserId ? createSupabaseServerClient() : createSupabaseAdminClient();
+    const { data: bid, error: bidError } = await supabase
+      .from("bids")
+      .select("*")
+      .eq("id", bidId)
+      .maybeSingle();
+
+    if (bidError) {
+      return { ok: false, message: bidError.message };
+    }
+
+    if (!bid) {
+      return { ok: false, message: "Bid not found." };
+    }
+
+    const { data: job, error: jobError } = await supabase
+      .from("jobs")
+      .select("*")
+      .eq("id", bid.job_id)
+      .maybeSingle();
+
+    if (jobError) {
+      return { ok: false, message: jobError.message };
+    }
+
+    if (!job) {
+      return { ok: false, message: "Job not found." };
+    }
+
+    if (serverUserId && job.user_id !== serverUserId) {
+      return { ok: false, message: "You can only accept bids on your own jobs." };
+    }
+
+    if (!bid.amount) {
+      return { ok: false, message: "Bid amount is required to accept." };
+    }
+
+    const platformFeeRate = 5;
+    const platformFeeAmount = calculatePlatformFeeAmount(bid.amount, platformFeeRate);
+    const transactionStatus =
+      bid.bid_type === "inspection_only" ? "inspection_escrowed" : "full_escrow_funded";
+
+    const { error: transactionError } = await supabase.from("transactions").insert({
+      job_id: job.id,
+      user_id: job.user_id,
+      payee_type: bid.bid_from_type,
+      tukang_id: bid.tukang_id,
+      agency_id: bid.agency_id,
+      total_amount: bid.amount,
+      platform_fee_rate: platformFeeRate,
+      platform_fee_amount: platformFeeAmount,
+      material_release_amount: null,
+      status: transactionStatus,
+      midtrans_order_id: null,
+    });
+
+    if (transactionError) {
+      return { ok: false, message: transactionError.message };
+    }
+
+    const { error: jobUpdateError } = await supabase
+      .from("jobs")
+      .update({
+        hired_type: bid.bid_from_type,
+        hired_tukang_id: bid.bid_from_type === "solo" ? bid.tukang_id : null,
+        hired_agency_id: bid.bid_from_type === "crew" ? bid.agency_id : null,
+        status: "assigned",
+      })
+      .eq("id", job.id);
+
+    if (jobUpdateError) {
+      return { ok: false, message: jobUpdateError.message };
+    }
+
+    const { error: acceptError } = await supabase
+      .from("bids")
+      .update({ status: "accepted" })
+      .eq("id", bid.id);
+
+    if (acceptError) {
+      return { ok: false, message: acceptError.message };
+    }
+
+    const { error: declineError } = await supabase
+      .from("bids")
+      .update({ status: "declined" })
+      .eq("job_id", job.id)
+      .neq("id", bid.id);
+
+    if (declineError) {
+      return { ok: false, message: declineError.message };
+    }
+
+    return { ok: true, message: "Bid accepted and escrow created." };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "Unable to accept bid.",
     };
   }
 };
