@@ -21,6 +21,11 @@ type EscrowActionState = {
   message: string;
 };
 
+type SubmitFinishState = {
+  ok: boolean;
+  message: string;
+};
+
 const parseNumber = (value: FormDataEntryValue | null) => {
   if (typeof value !== "string") {
     return null;
@@ -269,6 +274,66 @@ export const transitionEscrowAction = async (
     return {
       ok: false,
       message: error instanceof Error ? error.message : "Unable to update escrow.",
+    };
+  }
+};
+
+export const submitFinishAction = async (
+  _prevState: SubmitFinishState,
+  formData: FormData
+): Promise<SubmitFinishState> => {
+  const serverUserId = await getServerUserId();
+  const transactionId = parseText(formData.get("transaction_id"));
+  const finishPhotoUrl = parseText(formData.get("finish_photo_url"));
+
+  if (!transactionId || !finishPhotoUrl) {
+    return { ok: false, message: "Missing finish photo URL." };
+  }
+
+  try {
+    const supabase = serverUserId ? createSupabaseServerClient() : createSupabaseAdminClient();
+    const { data: transaction, error: transactionError } = await supabase
+      .from("transactions")
+      .select("*")
+      .eq("id", transactionId)
+      .maybeSingle();
+
+    if (transactionError) {
+      return { ok: false, message: transactionError.message };
+    }
+
+    if (!transaction) {
+      return { ok: false, message: "Transaction not found." };
+    }
+
+    const nextStatus = getNextTransactionStatus(transaction.status, "submit_finish");
+    if (!nextStatus) {
+      return { ok: false, message: "Invalid finish submission." };
+    }
+
+    const { error: jobError } = await supabase
+      .from("jobs")
+      .update({ finish_photo_url: finishPhotoUrl })
+      .eq("id", transaction.job_id);
+
+    if (jobError) {
+      return { ok: false, message: jobError.message };
+    }
+
+    const { error: transactionUpdateError } = await supabase
+      .from("transactions")
+      .update({ status: nextStatus })
+      .eq("id", transaction.id);
+
+    if (transactionUpdateError) {
+      return { ok: false, message: transactionUpdateError.message };
+    }
+
+    return { ok: true, message: "Finish submitted." };
+  } catch (error) {
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : "Unable to submit finish.",
     };
   }
 };

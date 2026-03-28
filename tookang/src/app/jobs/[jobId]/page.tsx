@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { acceptBidAction, transitionEscrowAction } from "./actions";
+import { acceptBidAction, submitFinishAction, transitionEscrowAction } from "./actions";
 import BidForm from "./BidForm";
 import { getBidsForJob } from "../../../lib/db/bids";
 import { getJobById } from "../../../lib/db/jobs";
@@ -113,6 +113,25 @@ export default async function JobDetailPage({ params }: JobPageProps) {
                       </span>
                       <span className="text-xs">Rp {transaction.total_amount}</span>
                     </div>
+                    <div className="mt-3 flex flex-wrap gap-2 text-[11px] text-[#454652]">
+                      {[
+                        "inspection_escrowed",
+                        "full_escrow_funded",
+                        "pending_confirmation",
+                        "completed",
+                      ].map((step) => (
+                        <span
+                          key={step}
+                          className={
+                            step === transaction.status
+                              ? "rounded-full bg-[#000666] px-3 py-1 text-white"
+                              : "rounded-full bg-white px-3 py-1"
+                          }
+                        >
+                          {step.replaceAll("_", " ")}
+                        </span>
+                      ))}
+                    </div>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {transaction.status === "inspection_escrowed" && (
                         <>
@@ -134,9 +153,13 @@ export default async function JobDetailPage({ params }: JobPageProps) {
                       )}
                       {transaction.status === "full_escrow_funded" && (
                         <>
-                          <form action={transitionEscrowAction}>
+                          <form action={submitFinishAction} className="flex flex-wrap gap-2">
                             <input type="hidden" name="transaction_id" value={transaction.id} />
-                            <input type="hidden" name="event" value="submit_finish" />
+                            <input
+                              name="finish_photo_url"
+                              placeholder="Finish photo URL"
+                              className="rounded-full bg-white px-4 py-2 text-xs text-[#191C1D]"
+                            />
                             <button className="rounded-full bg-[#000666] px-4 py-2 text-xs font-semibold text-white">
                               Submit Finish
                             </button>
