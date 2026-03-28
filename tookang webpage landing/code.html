@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tookang | Premium Home Maintenance Bali</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container-high": "#e7e8e9",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#000767",
+                "primary-container": "#1a237e",
+                "outline": "#767683",
+                "on-secondary-fixed": "#410001",
+                "error": "#ba1a1a",
+                "inverse-on-surface": "#f0f1f2",
+                "primary": "#000666",
+                "on-tertiary-fixed": "#2f1500",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#4c2600",
+                "surface": "#f8f9fa",
+                "on-tertiary-fixed-variant": "#6e3900",
+                "inverse-primary": "#bdc2ff",
+                "primary-fixed": "#e0e0ff",
+                "surface-variant": "#e1e3e4",
+                "surface-container-low": "#f3f4f5",
+                "on-surface": "#191c1d",
+                "on-secondary-container": "#6d0005",
+                "surface-bright": "#f8f9fa",
+                "surface-container": "#edeeef",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "inverse-surface": "#2e3132",
+                "secondary": "#ac332a",
+                "tertiary-fixed": "#ffdcc3",
+                "surface-dim": "#d9dadb",
+                "secondary-fixed-dim": "#ffb4aa",
+                "secondary-container": "#fd6e60",
+                "surface-tint": "#4c56af",
+                "on-error": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "on-primary-fixed-variant": "#343d96",
+                "secondary-fixed": "#ffdad5",
+                "on-primary-container": "#8690ee",
+                "on-background": "#191c1d",
+                "tertiary": "#2e1400",
+                "outline-variant": "#c6c5d4",
+                "on-tertiary-container": "#e47d00",
+                "background": "#f8f9fa",
+                "primary-fixed-dim": "#bdc2ff",
+                "tertiary-fixed-dim": "#ffb77d",
+                "on-surface-variant": "#454652",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#8b1a16"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-bold text-[#1A237E] dark:text-white tracking-tight font-headline" href="#">Tookang</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-semibold text-sm text-[#1A237E] dark:text-blue-400 border-b-2 border-[#1A237E] pb-1" href="#">Browse Pros</a>
+<a class="font-headline font-semibold text-sm text-[#454652] dark:text-slate-400 hover:text-[#1A237E] transition-colors" href="#">Services</a>
+<a class="font-headline font-semibold text-sm text-[#454652] dark:text-slate-400 hover:text-[#1A237E] transition-colors" href="#">How it Works</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block px-6 py-2.5 rounded-xl font-headline font-semibold text-sm text-[#454652] hover:bg-[#F3F4F5] transition-all active:scale-95">Join as Pro</button>
+<button class="px-6 py-2.5 rounded-xl bg-primary text-on-primary font-headline font-semibold text-sm shadow-lg shadow-primary/10 active:scale-95 transition-all">Find a Tukang</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern Bali Villa" class="w-full h-full object-cover" data-alt="Luxurious modern Bali villa with infinity pool, teak wood architecture, and lush tropical gardens at golden hour sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoYQLLRqZIDP6QAbEikMZ7c4GiIvaFcIZNjjjnigqyqsr_dbxjrB6qBs0UH17ZdITyOqqpkg5wZepiUUzN_eSWghvil93zGPUuKKCUnK1_LFG2654Hck_TNV_aCOJ0syEI-Lojf9clsd3mNeTQlaxxSHgtQk9LyMdAgzVgWVsu59ZjoPJNxgpEwDaNRvbgVHBqvMPx-kH4uANotTeVYBSrKMmFAruYcUjnTwTp-DSWwAZpJoLgjRK45NyRbLUutgLBd5FfzzH94xB0"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                        Premium Home Maintenance, <span class="text-secondary-container">Managed by Professionals.</span>
+</h1>
+<p class="text-lg md:text-xl text-white/90 font-medium mb-10 max-w-xl">
+                        Connect with verified Solo Tukang or Expert Crews for all your repair needs in Bali. Reliability meets island hospitality.
+                    </p>
+<!-- Global Search -->
+<div class="bg-surface-container-lowest p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-2 max-w-3xl">
+<div class="flex-1 flex items-center px-4 w-full">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/60 font-medium py-4" placeholder="What do you need help with? (e.g. leaking AC, broken pool pump)" type="text"/>
+</div>
+<button class="w-full md:w-auto px-8 py-4 bg-secondary text-on-secondary rounded-xl font-headline font-bold text-sm tracking-wide uppercase transition-all hover:bg-secondary-container active:scale-95">
+                            Search Pros
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Service Categories -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<span class="text-secondary font-bold tracking-widest uppercase text-xs">Our Expertise</span>
+<h2 class="font-headline text-3xl md:text-4xl font-bold mt-2 text-primary">Service Categories</h2>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                        View All Services 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Category Cards -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="ac_unit">ac_unit</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">AC Repair</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="plumbing">plumbing</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">Plumbing</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="bolt">bolt</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">Electrical</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">Cleaning</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="forest">forest</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">Landscape</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center group">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="pool">pool</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface-variant">Pool Service</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual-Model Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight">Tailored to Your Project Size</h2>
+<p class="text-on-surface-variant mt-4 text-lg">Choose the right partner for your home maintenance journey.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Solo Pro Card -->
+<div class="group relative overflow-hidden rounded-[2rem] bg-surface-container-lowest p-8 md:p-12 shadow-sm border border-outline-variant/10">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs uppercase tracking-widest mb-6">
+                                Quick Fixes
+                            </div>
+<h3 class="font-headline text-3xl font-bold text-primary mb-4">Hire a Solo Pro</h3>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                                Perfect for simple repairs, routine maintenance, and that personal touch. Work directly with experienced local artisans who know Bali homes inside out.
+                            </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 font-medium text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Direct Communication
+                                </li>
+<li class="flex items-center gap-3 font-medium text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Flexible Scheduling
+                                </li>
+<li class="flex items-center gap-3 font-medium text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Expert Niche Craftsmanship
+                                </li>
+</ul>
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-headline font-bold hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
+                                Find Solo Artisans
+                            </button>
+</div>
+<!-- Background Pattern/Image Hint -->
+<div class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[15rem]" data-icon="person">person</span>
+</div>
+</div>
+<!-- Crew Card -->
+<div class="group relative overflow-hidden rounded-[2rem] bg-primary p-8 md:p-12 shadow-2xl text-white">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary text-on-secondary font-bold text-xs uppercase tracking-widest mb-6">
+                                Major Projects
+                            </div>
+<h3 class="font-headline text-3xl font-bold mb-4">Hire a Professional Crew</h3>
+<p class="text-white/80 text-lg mb-8 leading-relaxed">
+                                Scalable solutions for renovations, multi-trade projects, and property management needs. Fully licensed teams with dedicated project managers.
+                            </p>
+<ul class="space-y-4 mb-10 text-white/90">
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Project Management Included
+                                </li>
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Comprehensive Warranty
+                                </li>
+<li class="flex items-center gap-3 font-medium">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Multi-Trade Coordination
+                                </li>
+</ul>
+<button class="w-full py-4 bg-secondary text-on-secondary rounded-xl font-headline font-bold hover:bg-secondary-container transition-all active:scale-95 shadow-xl shadow-secondary/30">
+                                Book Expert Crews
+                            </button>
+</div>
+<!-- Background Pattern/Image Hint -->
+<div class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[15rem]" data-icon="groups">groups</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI & Trust Section -->
+<section class="py-24 bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-4xl font-bold text-primary mb-6 leading-tight">Peace of Mind, Powered by <span class="text-secondary italic">Intelligence.</span></h2>
+<p class="text-on-surface-variant text-lg mb-12">We've built the most advanced service platform in Southeast Asia to protect your home and your wallet.</p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-2">AI-Powered Estimates</h4>
+<p class="text-on-surface-variant leading-relaxed">Snap a photo of the problem and get an instant, fair-market price range based on current Bali labor and material costs.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="translate">translate</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-2">Bilingual Chat Translation</h4>
+<p class="text-on-surface-variant leading-relaxed">Communicate effortlessly. Our real-time translation bridge converts English to Bahasa Indonesia and back instantly.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary mb-2">Milestone-Based Escrow</h4>
+<p class="text-on-surface-variant leading-relaxed">Your money stays safe. We hold payments and only release them to the Pro once you've confirmed each project milestone.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container-high rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Professional Technician" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80" data-alt="Close-up of a professional technician in a branded uniform using a tablet to diagnose complex machinery in a modern facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpukrLAR29bxF0nDaNpWi3xUyTk3TUvUKyl2a22zz_vZVoawaTsYt8DpfR_H7ZUF2jaU_ZnFj0aXs1uF-I3hJZU4jRbuNTUrlhipqktMPQrtdRZ8JMs5MOBSIsHqH3n7dzYDOgCFDuFu9sLM-VhywK8K0wOreNp_MKUUdFKp9ZhclBDeQH6lGVLS6mE-6E49Jmcr1hLJshe0EPy5oRtoO-fKDUfUBleHagORJT-LagLB4JlEFR7OPoeedDFBlUNAsuPqpHHZ6sdPPU"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-primary p-8 rounded-3xl shadow-2xl max-w-xs">
+<p class="text-white text-3xl font-bold font-headline mb-2">10k+</p>
+<p class="text-white/70 font-medium">Successful maintenance tasks completed across Bali this year.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<p class="text-on-surface-variant/60 font-bold uppercase tracking-widest text-xs mb-8">As Seen In &amp; Trusted By</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale contrast-125">
+<span class="text-xl font-bold font-headline italic">BALI PROPERTY MGR.</span>
+<span class="text-xl font-bold font-headline">Tropical Living</span>
+<span class="text-xl font-bold font-headline">Canggu Gazette</span>
+<span class="text-xl font-bold font-headline">Ubud Daily</span>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-8 rounded-3xl">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"Tookang has completely changed how I manage my villa portfolio. The crew services are professional and reliable."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Villa Owner" data-alt="Professional headshot of a middle-aged villa owner with a friendly smile, outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNqJIzxNTWYEk8TBKBeDJtdDvRaMSF44oWmQl73bMSr8afFU1sIzwus7hc06NA09wr_pbTlro2ee8E9cJEKpKkznuQ4HDd5zKaVulp6c5wBzzFK-QwOvKUAa7uAG9o0GE47xoOtoEPGCO3EvinRfSJq2ri59bWoUx2EqejB1J--3D-RQCBUFuYhj_kXov-qSd2TqdzubsjEELS3q0l-JdY0lzY_DaHIZuPjbIjZKE_Ex10CeuI54KEaTLvTgUkCTHi_ySOtRCkDrJc"/>
+</div>
+<div>
+<p class="font-bold text-primary">Marcus Thorne</p>
+<p class="text-xs text-on-surface-variant">Thorne Villas Group</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-low p-8 rounded-3xl">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"Finding a good plumber in Bali used to be a gamble. Now I just check for the 'Tookang Verified' badge and get it fixed same-day."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Villa Resident" data-alt="Candid portrait of a young woman living in Bali, smiling with a tropical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDck5emKfy6A-VLAlp_3T7RtsOiyTEJAoXbxw6GS8qZSkZrQfOonsiHkLh3ZfW-UhMZxqUtr1BxUZxuoEViykcTmwl2KM6g8NDzSsNRjM6bdSqDRE9g7eMleuOQv37nUYZhbhh8FueHL3AUuHZUjUQTPY_CPbMV4RrEcTkm7ygGwCDJNNRS5fiuucSQjgEU6swmjCZP0H44gxcDa1Fxzk6nU4AhM8n2zryi0fY8H4hqCtk5-HVSH4WSf13yyGQM-xARvjbpVF7hPv2J"/>
+</div>
+<div>
+<p class="font-bold text-primary">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">Seminyak Resident</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-8 rounded-3xl">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8 leading-relaxed">"The AI estimate tool is surprisingly accurate. It saved me from overpaying on a full roof renovation project."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Real Estate Agent" data-alt="Smartly dressed male real estate agent in front of a tropical property, smiling at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUkqnF_ECXZmH0J3-IszBdCGtlIvoEVHlDjJ-s33Mc138kw3on-f_YkOat7dQErE2oG0dyCTeqC65MEQOp8kGpRo_yDIDugO-5br2-FM0svWjM7SmU_T7tuXcW3DaodW8lRbG3gYi7zKVUf6poKw0BhhglVkxYJmUzYMyE9jrWuVzNqvY1dyLurYiVCH35wHtNul1tmsJSulxGyHCPo5aDVwgmfyWggWl8ahmrs6bkjIhfulfQVPodJ_GNUUYW6f8NP9CxVloCFkAb"/>
+</div>
+<div>
+<p class="font-bold text-primary">David Chen</p>
+<p class="text-xs text-on-surface-variant">Bali Prime Estates</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary"></div>
+<div class="relative z-10 max-w-5xl mx-auto px-8 text-center">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight">Ready to fix your home?</h2>
+<p class="text-white/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto">Get an instant quote from Bali's most trusted maintenance professionals today.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-12 py-5 bg-secondary text-on-secondary rounded-2xl font-headline font-bold text-lg hover:bg-secondary-container transition-all shadow-2xl shadow-secondary/40 active:scale-95">Book Now</button>
+<button class="px-12 py-5 bg-white/10 text-white rounded-2xl font-headline font-bold text-lg hover:bg-white/20 backdrop-blur-md transition-all active:scale-95">Download App</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F8F9FA] dark:bg-slate-950 w-full pt-16 pb-8 border-t border-[#C6C5D4]/15">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 px-8 max-w-7xl mx-auto">
+<div class="col-span-2">
+<a class="text-xl font-bold text-[#1A237E] dark:text-white font-headline" href="#">Tookang</a>
+<p class="mt-4 text-[#454652] dark:text-slate-400 font-body text-sm max-w-xs">Connecting quality craftsmen with premium property owners across the island of Bali since 2024.</p>
+</div>
+<div>
+<h5 class="font-headline font-bold text-primary mb-4 text-sm uppercase tracking-widest">Services</h5>
+<ul class="space-y-3 font-['Inter'] text-sm text-[#454652] dark:text-slate-400">
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Plumbing</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Electrical</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Carpentry</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">AC Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-primary mb-4 text-sm uppercase tracking-widest">Maintenance</h5>
+<ul class="space-y-3 font-['Inter'] text-sm text-[#454652] dark:text-slate-400">
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Cleaning</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Emergency</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Pool Maintenance</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-primary mb-4 text-sm uppercase tracking-widest">Company</h5>
+<ul class="space-y-3 font-['Inter'] text-sm text-[#454652] dark:text-slate-400">
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">About Us</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#1A237E] hover:underline underline-offset-4 decoration-[#AC332A] transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-primary mb-4 text-sm uppercase tracking-widest">Join Us</h5>
+<button class="px-4 py-2 bg-primary-fixed text-on-primary-fixed rounded-lg text-xs font-bold hover:bg-primary hover:text-white transition-all">Pro Portal</button>
+</div>
+</div>
+<div class="mt-16 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-sm text-[#454652] dark:text-slate-400">© 2024 Tookang Bali. Premium Home Maintenance.</p>
+<div class="flex gap-6">
+<a class="text-[#454652] hover:text-primary" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-[#454652] hover:text-primary" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+</div>
+</div>
+</footer>
+</body></html>

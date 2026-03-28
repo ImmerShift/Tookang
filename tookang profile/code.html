@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tookang | Bid Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#410001",
+              "tertiary-fixed": "#ffdcc3",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed": "#ffdad5",
+              "primary": "#000666",
+              "on-primary-fixed-variant": "#343d96",
+              "on-secondary-fixed-variant": "#8b1a16",
+              "surface-container-highest": "#e1e3e4",
+              "secondary": "#ac332a",
+              "outline": "#767683",
+              "tertiary": "#2e1400",
+              "surface-container-low": "#f3f4f5",
+              "secondary-fixed-dim": "#ffb4aa",
+              "primary-fixed-dim": "#bdc2ff",
+              "primary-fixed": "#e0e0ff",
+              "on-surface-variant": "#454652",
+              "on-tertiary-fixed": "#2f1500",
+              "on-error": "#ffffff",
+              "tertiary-container": "#4c2600",
+              "on-secondary-container": "#6d0005",
+              "on-error-container": "#93000a",
+              "outline-variant": "#c6c5d4",
+              "background": "#f8f9fa",
+              "on-primary-container": "#8690ee",
+              "secondary-container": "#fd6e60",
+              "inverse-surface": "#2e3132",
+              "on-tertiary-container": "#e47d00",
+              "on-background": "#191c1d",
+              "on-secondary": "#ffffff",
+              "surface": "#f8f9fa",
+              "surface-tint": "#4c56af",
+              "surface-bright": "#f8f9fa",
+              "on-tertiary-fixed-variant": "#6e3900",
+              "surface-container": "#edeeef",
+              "tertiary-fixed-dim": "#ffb77d",
+              "on-primary-fixed": "#000767",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e7e8e9",
+              "surface-dim": "#d9dadb",
+              "inverse-primary": "#bdc2ff",
+              "on-surface": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "primary-container": "#1a237e",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly man with short dark hair in a bright outdoor Balinese setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCETZMa_cFcljW-rwI42qbp6rd13SHYLnVKPqKRTQ1Ny6ak_2ho5OmBsiclMxW35LfAyJTcAM8nl79pIZD-bN506VJUU1O3FWv4PfJ0J1yHGp4Ok0tBGn7nqurD9jqGinxSb_-3QVwnr6mwlDMa-BZUJuX1n6M79TH8zQB1FioX-S-qh8mM576LKrBHhEUeA42r8I8d3kxVJtaAbueNeN-MzUTQO-zrFgun3l_TxqvjJl4O_GamlwDB5Bl0Iup7VI8e3IH1xCIh9pv5"/>
+</div>
+<h1 class="font-plus-jakarta text-2xl font-semibold tracking-tight text-[#000666] dark:text-blue-200">Hi, Ketut</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-[#000666] dark:text-blue-200 text-sm font-medium">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                Canggu, Bali
+            </div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-10">
+<!-- Screen Header -->
+<section class="space-y-1">
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="text-xs font-medium uppercase tracking-widest font-label">Service Request</span>
+</div>
+<h2 class="text-3xl font-bold text-primary tracking-tight">Your Bids: AC Maintenance</h2>
+<p class="text-on-surface-variant font-body">Review and compare professional quotes for your cooling system.</p>
+</section>
+<!-- Bids Stack -->
+<div class="space-y-6">
+<!-- Card A: Solo Tukang Bid -->
+<article class="bg-surface-container-lowest rounded-[2rem] p-6 shadow-[0_8px_32px_rgba(25,28,29,0.04)] relative overflow-hidden group hover:scale-[1.01] transition-transform duration-300">
+<!-- Signature Wash / Background Decor -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/20 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex items-start justify-between mb-6 relative z-10">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden">
+<img alt="Kadek S." class="w-full h-full object-cover" data-alt="Headshot of a professional technician in a blue polo shirt smiling warmly against a blurred natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9uyGFgtG9AremeDZLmRgZmcGHN2sKiwtiQE3LZKvG9YI9OXxlmxd3IfJKhB_V7Bk83B1cm2aWXeE7Lu_ZavGV6dWYw2Q7Z_bMqMs2yO1BNwlGxsnjJZntYbkhKwOKUXkDvhNU7xl_IDU0KXs82swBOfEEBz8yP9am0D6OD6bkx49KTAa4nSWk1F6KXqPJOM2yiFemrJQ-d8J_wBSwCBNEhJuBohROqyJN2d_DmfcFORXIr0flVveXXKiuib_2v9RwbiVhno0STcYs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-xl font-bold text-primary">Kadek S.</h3>
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">Top Rated</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Electrician • Individual Pro</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-on-surface">4.8</span>
+<span class="text-on-surface-variant text-sm px-1">|</span>
+<span class="text-on-surface-variant text-sm">47 jobs completed</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 mb-6 relative z-10 border-l-4 border-primary">
+<p class="text-on-surface-variant text-sm leading-relaxed italic">
+                        "I can be there in 30 minutes. I have all the tools for AC repair and specialize in tropical cooling efficiency."
+                    </p>
+</div>
+<button class="w-full bg-secondary text-white py-4 px-6 rounded-2xl font-bold text-lg flex justify-between items-center active:scale-95 transition-transform duration-200 shadow-lg shadow-secondary/20">
+<span>Accept Bid</span>
+<span class="font-headline tracking-tight">Rp 150.000</span>
+</button>
+</article>
+<!-- Card B: Crew/Agency Bid -->
+<article class="bg-surface-container-lowest rounded-[2rem] p-6 shadow-[0_8px_32px_rgba(25,28,29,0.04)] relative overflow-hidden group hover:scale-[1.01] transition-transform duration-300 border-l-[6px] border-secondary-container">
+<div class="flex items-start justify-between mb-6 relative z-10">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center text-white shadow-inner overflow-hidden">
+<img alt="Tropical Cooling Solutions" class="w-full h-full object-cover" data-alt="Minimalist modern logo of a cooling fan on a navy background for a professional HVAC company" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqyt0XTLEO-Jk5oRB9gaV-aWO8O45Lh3drfh6l_dFkpaofMsbV095RREHRyKcBJfKOP4T8uKoOpKNelY2ePgmO0ezmviTxNXHwqIapipxFwW9Nw7PBNZT9-oNUBlw34izzrDwY9mV2Wzfx-nhtNH5UCDG_I4V3xniL4oxD96mlkkN-vhBbA5iMMCXBlMgaZrnSfzir0KG2KWnSJcui8TmUVYfqiEHgJ_28qGSTmimiQsqVJ4lvsMbIy4MY0UsB2ymx2kBavsVi2XVY"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-xl font-bold text-primary">Tropical Cooling Solutions</h3>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">business_center</span>
+<span class="text-on-surface-variant text-sm font-medium">Verified Business • 5 Member Crew</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-on-surface">4.9</span>
+<span class="text-on-surface-variant text-sm px-1">|</span>
+<span class="text-on-surface-variant text-sm">23 jobs completed</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-6 space-y-3 relative z-10">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="Team 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small avatar of a technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbUbC1lLEiNG4GiwEFdNBMPF1gxyoHUUMXND4VlCYnnaUBqMzBIRbtNJWXE9rhR0aXxTXFKGV9-MB0CO72iDNp9C-Spivf2CHxCVmhZVtB0_XFtt_rRZyR3c3sMPd42rAoqjHRsBgVTZCdCVl0A11gUycvR6FGIXfgnlgqyDhgCQ8DiO33o8mqsbDBK4eVSd3yuV21L-Wdp4mUZvKX9KlrqgRSopisnJLBS1OQxzufQ5onW8GZeGhTgLg4yNxjeW5-6Hw8BMpvA16k"/>
+<img alt="Team 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small avatar of a second technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXAfw2wC62S-pNzXgid9dpb_W4G3VKkcnWjin64EHBC-XM_ek5F2N8GTNsNnuH3goCsetQBP75ba2OdERRl7EZUkko1gUJ79ElQXWgs5ICWLrVuHAufIPwF8wk0i7_i2i4Kpx5tKF-dyR0sQLrD5vy5uCIbixqf78t89sS5h0wjEp7ZzjwTrYwmCC-jYLa5CJQjWZ20JJPmMPDzIL0g-4_GYl4NvtfhVwp1zLVnvZMTMSWlq_BgNRh5NV23kLNJGDTTlFFrAn6ytLx"/>
+<img alt="Team 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small avatar of a third technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7QUknXIJtBFj8aEggOK0WjaXt6bV_0fv4Z16K1kDNVulfl6OD5KQ24gKyhs-6n7oOx9ZGi3f040pEDYTMJlmcAQL1ndw1VokiOUatZbxofmUKj8kak_i1eiHfV6UwczIL0RAukKF8v5MEkcHfseWBqevcNbVWzfnQeENKxNAElOnvcdIskCynTdvvpmslia7Kn_IpDZsfySpUaTADNox7RQCCetFuZpjpY8_VezJDyt99WoUljz2JcEG1-OKd29TWrQOCicDhNXGE"/>
+</div>
+<span class="text-xs font-semibold text-primary/70 font-label uppercase tracking-widest">Assigned Team</span>
+</div>
+<div class="bg-surface-container rounded-2xl p-4">
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            "Our expert team can handle the full installation and maintenance with warranty. We specialize in commercial-grade systems and large villa cooling networks."
+                        </p>
+</div>
+</div>
+<button class="w-full bg-secondary text-white py-4 px-6 rounded-2xl font-bold text-lg flex justify-between items-center active:scale-95 transition-transform duration-200 shadow-lg shadow-secondary/20">
+<span>Accept Crew Quote</span>
+<span class="font-headline tracking-tight">Rp 4.500.000</span>
+</button>
+</article>
+</div>
+<!-- Footnote / Info -->
+<section class="flex gap-3 p-4 bg-tertiary-fixed/30 rounded-2xl">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">info</span>
+<p class="text-xs text-on-tertiary-fixed-variant leading-snug">
+                Bids are valid for 24 hours. Selecting a bid will initiate a secure payment hold until the job is marked as complete.
+            </p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md rounded-t-[2rem] z-50 shadow-[0_-8px_32px_rgba(25,28,29,0.06)] border-t border-[#C6C5D4]/15">
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 hover:text-[#AC332A] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#1A237E] text-white rounded-2xl px-5 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">handyman</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-wider">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 hover:text-[#AC332A] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-wider">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 hover:text-[#AC332A] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+</body></html>

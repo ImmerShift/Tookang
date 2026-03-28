@@ -227,7 +227,7 @@ with check (id = auth.uid());
 create policy tukang_profiles_select_own
 on public.tukang_profiles
 for select
-using (user_id = auth.uid());
+using (true);
 
 create policy tukang_profiles_insert_own
 on public.tukang_profiles
@@ -243,7 +243,7 @@ with check (user_id = auth.uid());
 create policy agencies_select_own
 on public.agencies
 for select
-using (mandor_id = auth.uid());
+using (true);
 
 create policy agencies_insert_own
 on public.agencies
@@ -348,11 +348,7 @@ with check (user_id = auth.uid());
 create policy reviews_select_related
 on public.reviews
 for select
-using (
-  reviewer_id = auth.uid()
-  or tukang_id in (select id from public.tukang_profiles where user_id = auth.uid())
-  or agency_id in (select id from public.agencies where mandor_id = auth.uid())
-);
+using (true);
 
 create policy reviews_insert_by_reviewer
 on public.reviews
@@ -364,7 +360,6 @@ on public.crew_member_internal_scores
 for select
 using (
   agency_id in (select id from public.agencies where mandor_id = auth.uid())
-  or tukang_id in (select id from public.tukang_profiles where user_id = auth.uid())
 );
 
 create policy crew_member_internal_scores_insert_by_mandor
@@ -409,6 +404,25 @@ begin
     coalesce(new.raw_user_meta_data->>'language_preference', 'id')
   )
   on conflict (id) do nothing;
+
+  if resolved_account_type = 'solo' then
+    insert into public.tukang_profiles (user_id)
+    values (new.id)
+    on conflict (user_id) do nothing;
+  elsif resolved_account_type = 'mandor' then
+    insert into public.agencies (mandor_id, agency_name)
+    select
+      new.id,
+      coalesce(
+        new.raw_user_meta_data->>'agency_name',
+        new.raw_user_meta_data->>'name',
+        new.email,
+        'Mandor Crew'
+      )
+    where not exists (
+      select 1 from public.agencies where mandor_id = new.id
+    );
+  end if;
 
   return new;
 end;

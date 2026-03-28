@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tookang - Premium Home Services Bali</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#410001",
+                "tertiary-fixed": "#ffdcc3",
+                "surface-variant": "#e1e3e4",
+                "secondary-fixed": "#ffdad5",
+                "primary": "#000666",
+                "on-primary-fixed-variant": "#343d96",
+                "on-secondary-fixed-variant": "#8b1a16",
+                "surface-container-highest": "#e1e3e4",
+                "secondary": "#ac332a",
+                "outline": "#767683",
+                "tertiary": "#2e1400",
+                "surface-container-low": "#f3f4f5",
+                "secondary-fixed-dim": "#ffb4aa",
+                "primary-fixed-dim": "#bdc2ff",
+                "primary-fixed": "#e0e0ff",
+                "on-surface-variant": "#454652",
+                "on-tertiary-fixed": "#2f1500",
+                "on-error": "#ffffff",
+                "tertiary-container": "#4c2600",
+                "on-secondary-container": "#6d0005",
+                "on-error-container": "#93000a",
+                "outline-variant": "#c6c5d4",
+                "background": "#f8f9fa",
+                "on-primary-container": "#8690ee",
+                "secondary-container": "#fd6e60",
+                "inverse-surface": "#2e3132",
+                "on-tertiary-container": "#e47d00",
+                "on-background": "#191c1d",
+                "on-secondary": "#ffffff",
+                "surface": "#f8f9fa",
+                "surface-tint": "#4c56af",
+                "surface-bright": "#f8f9fa",
+                "on-tertiary-fixed-variant": "#6e3900",
+                "surface-container": "#edeeef",
+                "tertiary-fixed-dim": "#ffb77d",
+                "on-primary-fixed": "#000767",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "surface-container-high": "#e7e8e9",
+                "surface-dim": "#d9dadb",
+                "inverse-primary": "#bdc2ff",
+                "on-surface": "#191c1d",
+                "inverse-on-surface": "#f0f1f2",
+                "on-primary": "#ffffff",
+                "primary-container": "#1a237e",
+                "surface-container-lowest": "#ffffff"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close-up portrait of a smiling young balinese man with warm lighting and blurred tropical greenery background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiGOA0Gd0c8NgwrMWibBMkUNTFYFjorQ21PRWpj5IPawZEzSEQH2IQOQlJZCtYGqfdg8rmDSHGeIcDy157q0eZ4yF_-84yKvt2XAjGaI_xjVJcG8Hy7C6PJbbiYkd7Pw2qbrY4uwVNLCLObEhSIKZFgYgom2-nJd2HvAj9p9W10GxGUO9nJJ2dHEDQo5wNvUwtyX-gPDS1eOCe11Znr5GZA1nJIBCKUjwKIWXnon9VRwamJi9-7z2wLRUh1LwYzBGL5r6q_B0lU9gM"/>
+</div>
+<h1 class="font-headline text-2xl font-semibold tracking-tight text-[#000666] dark:text-blue-200">Hi, Ketut</h1>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-[#F3F4F5] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+<span class="font-label text-sm font-medium text-on-surface-variant">Canggu, Bali</span>
+</button>
+</header>
+<main class="pt-24 pb-32">
+<!-- Search Section -->
+<section class="px-6 mb-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border-none h-16 pl-12 pr-12 rounded-2xl shadow-[0_8px_32px_rgba(25,28,29,0.06)] focus:ring-2 focus:ring-primary/10 text-on-surface placeholder:text-outline transition-all" placeholder="Describe your problem..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<button class="p-2 rounded-full text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category Carousel -->
+<section class="mb-10">
+<div class="flex items-center justify-between px-6 mb-4">
+<h2 class="font-headline text-lg font-bold text-primary">Services</h2>
+<button class="text-secondary font-semibold text-sm">See All</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-6 px-6 pb-2">
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary group active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">ac_unit</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">AC Repair</span>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">plumbing</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">Plumbing</span>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">Electrical</span>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">cleaning_services</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">Cleaning</span>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">pest_control</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">Pest Control</span>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[72px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">pool</span>
+</div>
+<span class="font-label text-[11px] font-medium uppercase tracking-wider text-center">Pool Service</span>
+</div>
+</div>
+</section>
+<!-- Top Rated Solo Craftsmen -->
+<section class="mb-10">
+<div class="px-6 mb-4">
+<h2 class="font-headline text-lg font-bold text-primary">Top Rated Solo Craftsmen</h2>
+<p class="font-body text-sm text-on-surface-variant">Exceptional independent pros</p>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-4 px-6 pb-4">
+<!-- Card 1 -->
+<div class="min-w-[160px] bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<div class="relative mb-3">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm" data-alt="portrait of an experienced craftsman with a kind face and grey hair in a workshop setting with warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC9bkBBnZfW59VSTJ5b3OO_wIUT5GhpaOAKahVP4kQ9T06l8xHh7XhIXXSAI03ftJSDOV3yLuUDPdQE5l324jC5_31M7oaLQ0PDcqpBSN2eJ0BHj9awOLcoc_huBYvIO1u1py9cENdRF47AuHjb7f1PaR2HXYvbo8E-s0iYQS16b8lLMgxIH9oxt-EzbDRwN5oDma17fFdUkLDpGyC2ccNPkeVQ9Cm6m1qu3Ovt6LuoIdVr9nwILcUdAg71yL3nAqCaqTvJ1eCTmY9"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="font-headline text-sm font-semibold text-on-surface">Wayan P.</h3>
+<p class="font-label text-[10px] text-on-surface-variant mb-2">Master Plumber</p>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-[11px] font-bold">4.9</span>
+</div>
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed text-[9px] font-bold rounded-full uppercase tracking-tighter">Top Rated</span>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[160px] bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<div class="relative mb-3">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm" data-alt="professional woman plumber smiling in work uniform outdoors with bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB765OOkJQJTlRsVvUEn10troUMaDRBKrdNwOE7YImApjUuKSSuXPMwSbxrNnZO3oiKjhUL5FGwqUtCIe1zMKodzg1yGdVBqSsZ_ig8iZ_T_BzZWrVn3CaRTF-UDoJEXvh7gkYAC_s1DKaktUDYM3QkQZgYOfrDp5q6I4pgyx2wI0PxCckmVfJV-xaqA5tUj1RN3SDjgG-fXBUcUOd2mg52o9eTgAhu3hn7dMi0nBTG85HxS6B0ds5CqlbwvTnBsa6gxwYBl65j6_Ue"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="font-headline text-sm font-semibold text-on-surface">Made S.</h3>
+<p class="font-label text-[10px] text-on-surface-variant mb-2">Electrician</p>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-[11px] font-bold">4.8</span>
+</div>
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed text-[9px] font-bold rounded-full uppercase tracking-tighter">Top Rated</span>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[160px] bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<div class="relative mb-3">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm" data-alt="friendly smiling man wearing work shirt in tropical indoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSt5rqtLkRgFwV444moteCqJxHGorVsqwGilULEQ9ZF-2Xn0YfF4ThPUl6Acz3Dm_i6iln1ho5lFUKlMKYjFkNapu03QVChRRhjfCH0Duai7G24M0kuLfvOV1YgiN63UZL2GhEZqLbOdsXJH2tpKg-Z-reMN6T5XPPpGqhLaxH6KFk1xxFtmpwKoJD_WH2fFG1YjZMy6pdff8flA07MlruQanHPLvjMphzVYMoeYOQ5ElGdGreh2dxvKEHJ7Q3qTXUdj6k68BLEMwb"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="font-headline text-sm font-semibold text-on-surface">Gede K.</h3>
+<p class="font-label text-[10px] text-on-surface-variant mb-2">AC Expert</p>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-[11px] font-bold">5.0</span>
+</div>
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed text-[9px] font-bold rounded-full uppercase tracking-tighter">Top Rated</span>
+</div>
+</div>
+</section>
+<!-- Verified Trade Crews -->
+<section class="px-6 mb-12">
+<div class="mb-6">
+<h2 class="font-headline text-lg font-bold text-primary">Verified Trade Crews</h2>
+<p class="font-body text-sm text-on-surface-variant">Licensed agencies for large projects</p>
+</div>
+<div class="space-y-6">
+<!-- Agency Card 1 -->
+<div class="bg-surface-container-high rounded-2xl p-5 relative overflow-hidden flex flex-col">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4">
+<div class="w-14 h-14 bg-surface-container-lowest rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">foundation</span>
+</div>
+<div>
+<h3 class="font-headline font-semibold text-primary">Bali Build Crew</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-green-100 text-green-700 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                                        NIB VERIFIED
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">Assigned Team</span>
+<div class="flex -space-x-3">
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGsgFVzhWb7L-WTysY8EbFJbZc6VUjRotLt6KoiKtV1LOHB92MRY2-zUuudCpqIdVxBjRJ7HQwLNwZ4T1yFd4Ibfs9Fz1iIaYpAC34RC9cSPHts2jVmkvTY3LiOorWdNGe4OgA1ZmbjlWRpOm2NF2K1duzVJAfvhLqhgt1w33zjZltGgssLlDSHUvwpBhbpNDiWPBD3X2L4ffLV-WeCBJ_CEwaxQvN5gotItwi0VQtyV_nPPMtRIWROoJqJyW1mc1ZdBdaT5-aTVp4"/>
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ-jr_U-2ERBM84rabxPV_C0QVIrYcA0qcbywjbo9CydEx9oc9-j812AiJ9ndGU2-C_nnoE7Wye494eRpk_MMw08p4Y5-oLMcPtXkU0ATuG2DVhDzFs3FZHkKDwZ3d-VJD90UL7M7euzXU-gOuQhkgg33GcoU-HqKdPnVk8EWKMNV_Ffs8nuhgKYQR1bA7VnQLN18QFFmNvWCHlYZM65uORLPH-mX5O06afvHe7Y0ff0coyy2Q3_EKIMoVtL21Mb0K0qNpvf8Ec1sa"/>
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5DTTcqoLduH4GOWJHFwfe7BRVPNCbue_o5bFZBZchns0EXSvK583ah3aSNSAr8jiw-9GGVWGeyxj7LWRI-7ahppZ3z0DgxJdXVwzdAMKFDgQkGvG0yqBjN4fUgYNVZ7slMCMd2LY3CHGvFYKAWTMs6j9vU8tQkuzn2-KVEJuRhO4eSWhBl2nkHU69lFEEa89s3Jc301PGhtVHeqZjp3Niz5py1hqUNtgsR54ExC-VlDvmRCMvOzAoUkCxXlUfwB9Xm7I8budvVeF1"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-container-lowest flex items-center justify-center text-[10px] font-bold">+5</div>
+</div>
+</div>
+<button class="bg-primary text-white px-5 py-2.5 rounded-xl font-headline text-sm font-semibold active:scale-95 transition-transform">Book Crew</button>
+</div>
+</div>
+<!-- Agency Card 2 -->
+<div class="bg-surface-container-high rounded-2xl p-5 relative overflow-hidden flex flex-col">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4">
+<div class="w-14 h-14 bg-surface-container-lowest rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">nest_eco_leaf</span>
+</div>
+<div>
+<h3 class="font-headline font-semibold text-primary">Eco Bali Cleaners</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-green-100 text-green-700 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                                        NIB VERIFIED
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">Assigned Team</span>
+<div class="flex -space-x-3">
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnE4l9NyH03TiZe-5EkswT_Gr8l8hMeylNEfMYOn9NsCoisiaBgYyUm8TsSbd7-LoWod26FShW5ljMBcoOwVsgufoLqSByOjl6qXRJ2MQGVCc8Bu6uYLHO83KjlbpiTTwyxqEnQDCuLXxlPklGvPBKLZ03b9OG5UU4Vdfp_6m9iSjWEHZsASmf6ExrnrnNA_uJ586jWbRfbDti1wTqdwrJKeye2JB9IUNLDI5JWnbNxr059Z8DFDW34PzXJLJ0ztyDp_EHHh9S9pnO"/>
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgui1pyU-RaPoM8od1TGMH6AFOkcKLXD9zXEMS4MHwJ7JfNgpTBpD7jmCT2HfFPRaVQBNoULu7EcWb0jhhgJMGWxOjzXsU1fI9yKJRQhjGnKi6arxEPfqwQxypekL4dH_bCRENTWjjlAFTXXBwcxZrOYRzNLNN7ooWYtUuymQPNlKfa6C6Y3xbDpOYN4E3KchcwLdOQvn6pU4Z7Zsfg4bKvbQ7sfmnPJAFJBvZpJERBPwasniOOS-gHguLcrSN9-N_EYOl-B62Cbzk"/>
+<img alt="team member" class="w-8 h-8 rounded-full border-2 border-surface-container-high" data-alt="portrait headshot of a team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Z9CPuNmj7FOfS-sPY31-mj9UqY8B8NE-eBr8IWSd_flxEpPcjiUtwXI4h0vZyg_Px4wZLuaTd2NrJGtKj5D8V5qtyGV-tN2gMexImho8HVT0SYsrsWoZdwEax3o0XLblQCBXLcvrQXxnADWmWop9SExcFKtBh1T8RbOaC_nruprkpw6b6_UcTdt4SvfidJ_sssfXjxHcHL3HHWTJv0yzQ3kmmi2W9WQW1YBxRxV30qTC0eRG_z3g4wfXkdABs2gLRfez8KzXVNpM"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-high bg-surface-container-lowest flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+</div>
+<button class="bg-primary text-white px-5 py-2.5 rounded-xl font-headline text-sm font-semibold active:scale-95 transition-transform">Book Crew</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md rounded-t-[2rem] border-t border-[#C6C5D4]/15 shadow-[0_-8px_32px_rgba(25,28,29,0.06)] z-50">
+<a class="flex flex-col items-center justify-center bg-[#1A237E] text-white rounded-2xl px-5 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 active:scale-90 transition-transform duration-200 hover:text-[#AC332A] dark:hover:text-[#FD6E60]" href="#">
+<span class="material-symbols-outlined text-[24px]">handyman</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-wider mt-1">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 active:scale-90 transition-transform duration-200 hover:text-[#AC332A] dark:hover:text-[#FD6E60]" href="#">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-wider mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-slate-400 px-5 py-2 active:scale-90 transition-transform duration-200 hover:text-[#AC332A] dark:hover:text-[#FD6E60]" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label text-[10px] font-medium uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) - For quick access to emergency services -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-white shadow-xl active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">emergency_home</span>
+</button>
+</body></html>
